@@ -1,4 +1,4 @@
 # eviltwin-minishell
-Don't talk too much, just enjoy ^ _ ^ <br><br>
-Display: <br>
-<img width="100%" src="https://raw.githubusercontent.com/eviltwin-dev/eviltwin-minishell/master/eviltwin-minishell.jpg">
+<b>Minishell with special feature, Enjoy!!<br><br>
+Display: <br></b>
+<img width="100%" src="https://raw.githubusercontent.com/eviltwin-dev/eviltwin-minishell/master/Screenshot_20201115-225854_Chrome.jpg">
